@@ -58,6 +58,6 @@ public class UserService {
         return userResponse;
     }
     public Boolean validateUser(String userId){
-        return userRepository.existsByKeyCloakId(userId);
+        return userRepository.existsByKeycloakId(userId);
     }
 }
