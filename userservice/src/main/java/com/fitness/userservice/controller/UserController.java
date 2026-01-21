@@ -19,7 +19,6 @@ public class UserController {
     public ResponseEntity<UserResponse> getUserProfile(@PathVariable String userId) {
     return ResponseEntity.ok(userService.getUserProfile(userId));
     }
-
     @PostMapping("/register")
     public ResponseEntity<UserResponse> register(@Valid @RequestBody RegisterRequest request){
         return ResponseEntity.ok(userService.register(request));
@@ -29,5 +28,7 @@ public class UserController {
         return ResponseEntity.ok(userService.validateUser(userId));
 
     }
+
+
 
 }
