@@ -31,6 +31,7 @@ public class UserService {
         user.setEmail(request.getEmail());
         user.setPassword(request.getPassword());
         user.setFirstName(request.getFirstName());
+        user.setKeycloakId(request.getKeycloakId());
         user.setLastName(request.getLastName());
 
         User savedUser = userRepository.save(user);
@@ -39,6 +40,7 @@ public class UserService {
         userResponse.setEmail(savedUser.getEmail());
         userResponse.setPassword(savedUser.getPassword());
         userResponse.setFirstName(savedUser.getFirstName());
+        userResponse.setKeycloakId(savedUser.getKeycloakId());
         userResponse.setLastName(savedUser.getLastName());
         userResponse.setCreatedAt(savedUser.getCreatedAt());
         userResponse.setUpdatedAt(savedUser.getUpdatedAt());
@@ -57,7 +59,7 @@ public class UserService {
         userResponse.setUpdatedAt(user.getUpdatedAt());
         return userResponse;
     }
-    public Boolean validateUser(String userId){
+    public Boolean existByUserId(String userId){
         return userRepository.existsByKeycloakId(userId);
     }
 }
